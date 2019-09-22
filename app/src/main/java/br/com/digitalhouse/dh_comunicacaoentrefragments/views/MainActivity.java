@@ -22,15 +22,16 @@ public class MainActivity extends AppCompatActivity implements Comunicador {
     }
 
     @Override
-    public void receberMensagem(SistemaOperacional sistemaOperacional) {
+    public void recebeMensagem(SistemaOperacional sistemaOperacional) {
         setBundleToFragment(sistemaOperacional, SO_KEY);
     }
 
-    private void replaceFragment(int container, Fragment fragment){}
-    FragmentManager manager = getSupportFragmentManager();
-    FragmentTransaction transaction = manager.beginTransaction();
-    transaction.replace(container, fragment);
-    transaction.commit();
+    private void replaceFragment(int container, Fragment fragment){
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(container, fragment);
+        transaction.commit();
+    }
 
     private void setBundleToFragment(SistemaOperacional so, String CHAVE){
         Bundle bundle = new Bundle();
